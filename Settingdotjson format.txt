@@ -1,0 +1,12 @@
+    al.codeAnalyzers [
+
+        ${AppSourceCop},
+        ${CodeCop},
+        ${PerTenantExtensionCop},
+        ${UICop}
+    ],
+    al.ruleSetPath ..vscodeBCGRuleSet.json,
+    al.compilationOptions {
+        
+        
+    }

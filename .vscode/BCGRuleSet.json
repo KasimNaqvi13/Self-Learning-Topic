@@ -1,0 +1,11 @@
+{
+    "name": "Name",
+    "description": "Description",
+    "rules": [
+        {
+            "id": "AS0051",  "_comments" :"AppSourceCop Error AS0051" ,
+            "action": "Warning",
+            "justification": "Convert From Error to warning"
+        }
+    ]
+}
