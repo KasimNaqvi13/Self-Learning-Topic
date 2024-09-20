@@ -1,6 +1,6 @@
 {
   "id": "4ff1e5c5-523d-4a66-8501-8742331f5819",
-  "name": "WhatsApp-Intergration",
+  "name": "Test-Learning-app",
   "publisher": "Naqvi",
   "version": "1.0.0.0",
   "brief": "",
@@ -8,8 +8,8 @@
   "privacyStatement": "",
   "EULA": "",
   "help": "",
-  "url": "",
-  "logo": "",
+  "url": "https://media.licdn.com/dms/image/D4D03AQFfl4mpxSQEsA/profile-displayphoto-shrink_400_400/0/1708526968447?e=2147483647&v=beta&t=yqbs2X-g6UfYLp82a7llgoxN7nnuPSH4dOfLua6oKMo",
+  "logo": "C:/Users/naqvi.a.CETASTECH/Pictures/1708526968447.jfif",
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
@@ -17,17 +17,24 @@
   "idRanges": [
     {
       "from": 50000,
-      "to": 50010
+      "to": 50100
     }
   ],
   "resourceExposurePolicy": {
     "allowDebugging": true,
-    "allowDownloadingSource": true,
-    "includeSourceInSymbolFile": true,
-    "applyToDevExtension": true
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false,
+    "applyToDevExtension": false
   },
   "runtime": "13.0",
+  "propagateDependencies": true,
   "features": [
-    "NoImplicitWith"
+    "NoImplicitWith",
+    "NoPromotedActionProperties",
+    "UseLegacyAnalyzerStrategy",
+    "GenerateCaptions",
+     "AllTranslationItems",
+     "TranslationFile"
+
   ]
 }

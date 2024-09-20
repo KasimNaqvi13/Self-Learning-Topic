@@ -14,7 +14,7 @@
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
             "tenant": "04ce07e0-da69-47ed-8ebd-3770ea2d2a45",
-            "schemaUpdateMode": "Synchronize"
+            "schemaUpdateMode": "ForceSync"
         },
         // {
         //     "name": "snapshotInitialize: Microsoft production cloud",
