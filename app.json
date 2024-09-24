@@ -10,7 +10,14 @@
   "help": "",
   "url": "https://media.licdn.com/dms/image/D4D03AQFfl4mpxSQEsA/profile-displayphoto-shrink_400_400/0/1708526968447?e=2147483647&v=beta&t=yqbs2X-g6UfYLp82a7llgoxN7nnuPSH4dOfLua6oKMo",
   "logo": "C:/Users/naqvi.a.CETASTECH/Pictures/1708526968447.jfif",
-  "dependencies": [],
+  "dependencies": [
+      {
+        "id": "db643212-b7fb-4dd4-b5a8-cb44ac714461",
+        "name":"India GST",
+        "publisher": "Microsoft",
+        "version": "24.3.21374.22624"
+      }
+  ],
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "24.0.0.0",
