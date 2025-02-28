@@ -16,16 +16,24 @@
             "tenant": "90a7e3f8-d047-4e03-8592-7ee3feb5f264",
             "schemaUpdateMode": "Synchronize"
         },
-
-
-        // {
-        //     "name": "snapshotInitialize: Microsoft production cloud",
-        //     "type": "al",
-        //     "request": "snapshotInitialize",
-        //     "environmentType": "Production",
-        //     "environmentName": "production",
-        //     "breakOnNext": "WebClient",
-        //     "executionContext": "DebugAndProfile"
-        // }        
+        {
+            "name": "Your own server",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://localhost:8080/BC250",
+            "serverInstance": "BC250",
+            "port": 7049,
+            "authentication": "UserPassword",
+            "startupObjectId": 89,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default",
+            "usePublicURLFromServer": true,
+            "schemaUpdateMode": "Synchronize"
+        }
     ]
 }
