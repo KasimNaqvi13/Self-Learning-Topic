@@ -10,14 +10,7 @@
   "help": "",
   "url": "https://media.licdn.com/dms/image/D4D03AQFfl4mpxSQEsA/profile-displayphoto-shrink_400_400/0/1708526968447?e=2147483647&v=beta&t=yqbs2X-g6UfYLp82a7llgoxN7nnuPSH4dOfLua6oKMo",
   "logo": "C:/Users/naqvi.a.CETASTECH/Pictures/1708526968447.jfif",
-  "dependencies": [
-    {
-      "id": "e00e9a5c-1715-428d-a2f4-58b53f0a2ad8",
-      "name": "NB Projects - Project Engineering & Construction Solution",
-      "publisher": "CETAS Information Technology",
-      "version": "3.2500.107.0"
-    }
-  ],
+  "dependencies": [],
   "screenshots": [],
   "platform": "25.0.0.0",
   "application": "25.0.0.0",
