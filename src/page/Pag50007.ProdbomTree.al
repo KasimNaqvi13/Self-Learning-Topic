@@ -93,14 +93,14 @@ page 50007 "Prod bom Tree"
                 begin
                     if "Prod Bom Rec".FindSet() then
                         "Prod Bom Rec".ModifyAll("Bom Bool", false);
-                    if "Prod Bom Rec".FindSet() then begin
+                    if "Prod Bom Rec".FindSet() then
                         repeat
                             InsertingProductionBom("Prod Bom Rec"."Item No.", "Prod Bom Rec".Quantity);
                             "Prod Bom Rec"."Main Prod No." := DummyProdOrderNo;
                             "Prod Bom Rec".Modify(true);
 
                             "Bom Line Rec".SetRange("Production BOM No.", "Prod Bom Rec"."Item No.");
-                            if "Bom Line Rec".FindSet() then begin
+                            if "Bom Line Rec".FindSet() then
                                 repeat
                                     "Prod Bom Rec 2".SetRange("Bom Bool", false);
                                     "Prod Bom Rec 2".SetRange("Item No.", "Bom Line Rec"."No.");
@@ -109,10 +109,9 @@ page 50007 "Prod bom Tree"
                                         "Prod Bom Rec 2"."Bom Bool" := true;
                                         "Prod Bom Rec 2".Modify(true);
                                     end;
-                                until "Prod Bom Rec".Next = 0;
-                            end;
-                        until "Prod Bom Rec".Next = 0;
-                    end;
+                                until "Bom Line Rec".Next() = 0;
+                        until "Prod Bom Rec".Next() = 0;
+
                 end;
             }
         }
@@ -132,8 +131,6 @@ page 50007 "Prod bom Tree"
         SendingIndent: Integer;
 
     trigger OnOpenPage()
-    var
-        Cust: Record Customer;
     begin
         if "Sales Item No." <> '' then begin
             ItemFilterEditable := false;
@@ -154,10 +151,6 @@ page 50007 "Prod bom Tree"
             "Prod Bom Tree Rec".DeleteAll(true);
     end;
 
-    trigger OnPageBackgroundTaskError(TaskId: Integer; ErrorCode: Text; ErrorText: Text; ErrorCallStack: Text; var IsHandled: Boolean)
-    begin
-
-    end;
 
     procedure "Item Filter Fun"(ItemRecPara: Code[20])
     begin
@@ -206,7 +199,7 @@ page 50007 "Prod bom Tree"
                     SendingIndent := 0;
 
                 InsertingLine("Bom Line Rec"."No.", false);
-            until "Bom Line Rec".Next = 0;
+            until "Bom Line Rec".Next() = 0;
         Child();
 
     end;
@@ -216,7 +209,7 @@ page 50007 "Prod bom Tree"
         "Prod Bom Tree Rec 2": Record "Production Bom Tree";
     begin
         "Prod Bom Tree Rec 2".SetRange("Bom Bool", false);
-        if "Prod Bom Tree Rec 2".FindSet() then begin
+        if "Prod Bom Tree Rec 2".FindSet() then
             repeat
                 "Prod Bom Tree Rec 2"."Bom Bool" := true;
                 "Prod Bom Tree Rec 2".Modify();
@@ -225,28 +218,27 @@ page 50007 "Prod bom Tree"
                     Parent("Prod Bom Tree Rec 2"."Item No.");
                     Child();
                 end;
-            until "Prod Bom Tree Rec 2".Next = 0;
-        end
+            until "Prod Bom Tree Rec 2".Next() = 0
         else
             exit;
     end;
 
-    procedure InsertingProductionBom(itemrecpara: Code[20]; QuantityRecpara: Decimal)
+    procedure InsertingProductionBom(ItemRecPara: Code[20]; QuantityRecPara: Decimal)
     var
         ProductionOrder: Record "Production Order";
         ProdOrderDirection: Option Forward,Backward;
         CreateProdOrderLines: Codeunit "Create Prod. Order Lines";
     begin
-        CLEAR(ProductionOrder);
-        ProductionOrder.INIT;
-        ProductionOrder.VALIDATE("No.", '');
-        ProductionOrder.VALIDATE(Status, ProductionOrder.Status::Released);
-        ProductionOrder.INSERT(TRUE);
-        ProductionOrder.VALIDATE("Source Type", ProductionOrder."Source Type"::Item);
-        ProductionOrder.VALIDATE("Source No.", itemrecpara);
-        ProductionOrder.VALIDATE(Quantity, QuantityRecpara);
-        ProductionOrder.MODIFY(TRUE);
-        CreateProdOrderLines.Copy(ProductionOrder, ProdOrderDirection::Forward, '', FALSE);
+        Clear(ProductionOrder);
+        ProductionOrder.Init();
+        ProductionOrder.Validate("No.", '');
+        ProductionOrder.Validate(Status, ProductionOrder.Status::Released);
+        ProductionOrder.Insert(true);
+        ProductionOrder.Validate("Source Type", ProductionOrder."Source Type"::Item);
+        ProductionOrder.Validate("Source No.", ItemRecPara);
+        ProductionOrder.Validate(Quantity, QuantityRecPara);
+        ProductionOrder.Modify(true);
+        CreateProdOrderLines.Copy(ProductionOrder, ProdOrderDirection::Forward, '', false);
         DummyProdOrderNo := ProductionOrder."No.";
     end;
 

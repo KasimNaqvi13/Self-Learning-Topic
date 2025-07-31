@@ -10,10 +10,23 @@
   "help": "",
   "url": "https://media.licdn.com/dms/image/D4D03AQFfl4mpxSQEsA/profile-displayphoto-shrink_400_400/0/1708526968447?e=2147483647&v=beta&t=yqbs2X-g6UfYLp82a7llgoxN7nnuPSH4dOfLua6oKMo",
   "logo": "",
-  "dependencies": [],
+  "dependencies": [
+    {
+      "id": "05b51c29-4d98-41bb-9a2e-a5fe9048ec83",
+      "name": "Ecodel Exclusive - Core",
+      "publisher": "Ecodel",
+      "version": "24.0.250128.1"
+    },
+    {
+      "id": "dbbff56d-274e-4fcb-bdf6-79c2106932d3",
+      "name": "Ecodel Exclusive - Data Warehouse Connector",
+      "publisher": "Ecodel",
+      "version": "26.0.250709.1"
+    }
+  ],
   "screenshots": [],
-  "platform": "25.0.0.0",
-  "application": "25.0.0.0",
+  "platform": "26.0.0.0",
+  "application": "26.0.0.0",
   "idRanges": [
     {
       "from": 50000,
@@ -24,9 +37,9 @@
     "allowDebugging": true,
     "allowDownloadingSource": false,
     "includeSourceInSymbolFile": false,
-    "applyToDevExtension": false
+    "applyToDevExtension": true
   },
-  "runtime": "14.0",
+  "runtime": "15.0",
   "propagateDependencies": true,
   "features": [
     "NoImplicitWith",

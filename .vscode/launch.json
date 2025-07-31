@@ -2,11 +2,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Self-Learning",
+            "name": "Exploration",
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
-            "environmentName": "Self-Learning",
+            "environmentName": "Exploration",
             // "startupObjectId": 22,
             "startupObjectType": "Page",
             "breakOnError": "All",
@@ -14,7 +14,7 @@
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
             "tenant": "e3123855-b90f-4905-b124-e03d121c1490",
-            "schemaUpdateMode": "Synchronize"
+            "schemaUpdateMode": "ForceSync"
         },
         {
             "name": "Your own server",

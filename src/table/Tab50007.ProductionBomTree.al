@@ -59,11 +59,7 @@ table 50007 "Production Bom Tree"
 
     fieldgroups
     {
-        // Add changes to field groups here
     }
-
-    var
-        myInt: Integer;
 
     trigger OnInsert()
     begin
